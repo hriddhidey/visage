@@ -1,2 +1,2 @@
-# makeupify
-Add virtual makeup to picture of a face.
+# Visage
+Add virtual makeup to a picture of a face.
