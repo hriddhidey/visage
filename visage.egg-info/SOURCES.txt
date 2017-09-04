@@ -1,0 +1,10 @@
+README.md
+setup.cfg
+setup.py
+visage/apply_makeup.py
+visage/detect_features.py
+visage.egg-info/PKG-INFO
+visage.egg-info/SOURCES.txt
+visage.egg-info/dependency_links.txt
+visage.egg-info/requires.txt
+visage.egg-info/top_level.txt
