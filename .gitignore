@@ -1,4 +1,8 @@
 bin
 include
+dist
 lib
 share
+pyvisage.egg-info
+.Python
+pip-selfcheck.json

@@ -5,7 +5,7 @@ except ImportError:
     from distutils.core import setup
 
 setup(
-    name='visage',
+    name='pyvisage',
     packages=['visage'],
     version='0.12',
     description='Add virtual makeup to an image of a face.',
