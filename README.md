@@ -1,6 +1,5 @@
 # Visage
 Add virtual makeup to a picture of a face.
-____
 
 ### Installation _(MacOS)_
 
@@ -18,6 +17,6 @@ ____
 	* `brew install boost`
 	* `brew install boost-python`
 
-* Kindly consider using a **virtual environment ** for development. Check out [**this link**](http://python-guide-pt-br.readthedocs.io/en/latest/dev/virtualenvs/) to get an idea about how to do that. 
+* Kindly consider using a **virtual environment** for development. Check out [**this link**](http://python-guide-pt-br.readthedocs.io/en/latest/dev/virtualenvs/) to get an idea about how to do that. 
 
 * Install the python module requirements by running - `pip install visage`
