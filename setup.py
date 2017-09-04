@@ -10,6 +10,12 @@ setup(
     author_email='hriddhidey@gmail.com',
     url='https://github.com/hriddhidey/visage.git',
     download_url='https://github.com/hriddhidey/visage/archive/1.tar.gz',
+    install_requires=[
+        'opencv-python',
+        'scikit-image',
+        'scipy',
+        'dlib'
+    ],
     keywords=['image', 'processing', 'virtual', 'makeup', 'face', 'detection', 'opencv'],
     classifiers=[],
 )
