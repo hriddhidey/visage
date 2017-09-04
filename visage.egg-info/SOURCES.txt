@@ -1,6 +1,7 @@
 README.md
 setup.cfg
 setup.py
+visage/__init__.py
 visage/apply_makeup.py
 visage/detect_features.py
 visage.egg-info/PKG-INFO
