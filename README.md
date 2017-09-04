@@ -19,4 +19,4 @@ Add virtual makeup to a picture of a face.
 
 * Kindly consider using a **virtual environment** for development. Check out [**this link**](http://python-guide-pt-br.readthedocs.io/en/latest/dev/virtualenvs/) to get an idea about how to do that. 
 
-* Install the python module requirements by running - `pip install visage`
+* Install the python module requirements by running - `pip install pyvisage`
