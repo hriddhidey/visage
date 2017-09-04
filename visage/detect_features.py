@@ -58,7 +58,7 @@ class DetectLandmarks(object):
                 Either of three options:\n
                     a. (int) Image data after being read with cv2.imread()\n
                     b. File path of locally stored image file.\n
-                    c. Byte stream being received over multipart network reqeust.\n\n
+                    c. Byte stream being received over multipart network request.\n\n
             2. `flag`:
                 Used to denote the type of image_file parameter being passed.
                 Possible values are IMG_DATA, FILE_READ, NETWORK_BYTE_STREAM respectively.

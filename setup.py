@@ -19,6 +19,7 @@ setup(
         'scipy',
         'dlib'
     ],
+    include_package_data=True,
     keywords=['image', 'processing', 'virtual', 'makeup', 'face', 'detection', 'opencv'],
     classifiers=[],
 )

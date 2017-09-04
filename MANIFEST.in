@@ -1,0 +1,2 @@
+include visage/haarcascade_frontalface_default.xml
+include visage/shape_predictor_68_face_landmarks.dat
