@@ -22,11 +22,7 @@ Add virtual makeup to a picture of a face.
 * If you don't have [Homebrew](https://brew.sh/), copy paste the following in your terminal to get it - 
 `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
-* Install **Cmake** - `brew install cmake`
-
-* Install **Boost** and **Boost-Python** - 
-	* `brew install boost`
-	* `brew install boost-python`
+* Install **Cmake, Boost, and Boost-Python** - `brew install cmake boost boost-python`
 
 * Kindly consider using a **virtual environment** for development. Check out [**this link**](http://docs.python-guide.org/en/latest/dev/virtualenvs/) to get an idea about how to do that. 
 
@@ -38,8 +34,8 @@ The module consists of two classes - `Detect Features` and `ApplyMakeup`. You ca
 
 Example - 
 ```
-from pyvisage import ApplyMakeup as am
-
-output_file = am.apply_lipstick('input.jpg',170,10,30) // (R,G,B) - (170,10,30)
+from visage import ApplyMakeup
+AM = ApplyMakeup()
+output_file = AM.apply_lipstick('input.jpg',170,10,30) // (R,G,B) - (170,10,30)
 ```
 For detailed usage, refer to [Wiki](https://github.com/hriddhidey/visage/wiki).
