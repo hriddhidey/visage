@@ -4,9 +4,11 @@ This module contains the DetectLandmark class.
 @author: Hriddhi Dey
 """
 
+import os.path
 import cv2
 import dlib
 import numpy
+import urllib
 
 PREDICTOR_PATH = "shape_predictor_68_face_landmarks.dat"
 CASC_PATH = "haarcascade_frontalface_default.xml"
@@ -30,6 +32,13 @@ class DetectLandmarks(object):
 
     def __init__(self):
         """ Initiator for class. """
+        if not os.path.isfile(PREDICTOR_PATH):
+            print 'Predictor not found. Downloading...this may take a while...'
+            urllib.urlretrieve(
+                'https://github.com/hriddhidey/visage/blob/master/visage/shape_predictor_68_face_landmarks.dat?raw=true',
+                PREDICTOR_PATH
+            )
+            print 'Predictor downloaded.'
         self.predictor = dlib.shape_predictor(PREDICTOR_PATH)
         self.cascade = cv2.CascadeClassifier(CASC_PATH)
         self.detector = dlib.get_frontal_face_detector()
