@@ -12,7 +12,7 @@ Add virtual makeup to a picture of a face.
 </tr>
 </table>
 
-### Installation _(MacOS)_
+## Installation _(MacOS)_
 
 * You need **Python2.7** and `pip` to get this working. MacOS comes with Python2.7 installed by default. If you don't have `pip`, follow these steps to get it - 	
 	* `curl -O https://bootstrap.pypa.io/get-pip.py`
@@ -32,13 +32,13 @@ Add virtual makeup to a picture of a face.
 
 * Install the python module requirements by running - `pip install pyvisage`
 
-### Usage
+## Usage
 
 The module consists of two classes - `Detect Features` and `ApplyMakeup`. You can import both of them from `pyvisage`, and use access their functions to either selectively detect face only, or apply lipstick directly.
 
 Example - 
 ```
-import ApplyMakeup as am
+from pyvisage import ApplyMakeup as am
 
 output_file = am.apply_lipstick('input.jpg',170,10,30) // (R,G,B) - (170,10,30)
 ```
