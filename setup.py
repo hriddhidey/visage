@@ -7,12 +7,12 @@ except ImportError:
 setup(
     name='visage',
     packages=['visage'],
-    version='0.1',
+    version='0.12',
     description='Add virtual makeup to an image of a face.',
     author='Hriddhi Dey',
     author_email='hriddhidey@gmail.com',
     url='https://github.com/hriddhidey/visage.git',
-    download_url='https://github.com/hriddhidey/visage/archive/0.1.tar.gz',
+    download_url='https://github.com/hriddhidey/visage/archive/0.12.tar.gz',
     install_requires=[
         'opencv-python',
         'scikit-image',
