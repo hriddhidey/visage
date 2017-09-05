@@ -49,7 +49,7 @@ Example -
 ```
 from visage import ApplyMakeup
 AM = ApplyMakeup()
-output_file = AM.apply_lipstick('input.jpg',170,10,30) // (R,G,B) - (170,10,30)
+output_file = AM.apply_lipstick('input.jpg',170,10,30) # (R,G,B) - (170,10,30)
 ```
 This assumes you have a front-facing image of a human face saved in your current directory as `input.jpg`.
 
