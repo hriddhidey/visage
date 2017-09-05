@@ -2,8 +2,9 @@
 # -*- coding: utf-8 -*-
 """
 Created on Mon Mar 20 12:28:21 2017
-This module contains the ApplyMakeup class.
 @author: Hriddhi Dey
+
+This module contains the ApplyMakeup class.
 """
 
 import itertools
@@ -292,7 +293,7 @@ class ApplyMakeup(DetectLandmarks):
         uol_c, uil_c, lol_c, lil_c = self.__get_curves_lips(uol, uil, lol, lil)
         self.__fill_color(uol_c, uil_c, lol_c, lil_c)
         self.im_copy = cv2.cvtColor(self.im_copy, cv2.COLOR_BGR2RGB)
-        name = '_color_' + str(self.red_l) + '_' + str(self.green_l) + '_' + str(self.blue_l)
+        name = 'color_' + str(self.red_l) + '_' + str(self.green_l) + '_' + str(self.blue_l)
         file_name = 'output_' + name + '.jpg'
         cv2.imwrite(file_name, self.im_copy)
         return file_name

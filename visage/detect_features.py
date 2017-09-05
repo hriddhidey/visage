@@ -1,14 +1,16 @@
 """
 Created on Mon Mar 20 12:28:21 2017
-This module contains the DetectLandmark class.
 @author: Hriddhi Dey
+
+This module contains the DetectLandmark class.
 """
 
 import os.path
+from urllib import urlretrieve
 import cv2
 import dlib
 import numpy
-import urllib
+from progressbar import ProgressBar, Percentage, Bar
 
 PREDICTOR_PATH = "shape_predictor_68_face_landmarks.dat"
 CASC_PATH = "haarcascade_frontalface_default.xml"
@@ -31,14 +33,28 @@ class DetectLandmarks(object):
 
 
     def __init__(self):
-        """ Initiator for class. """
+        """ Initiator for DetectLandmarks class.
+        Downloads the predictor file if not available.
+        Raises:
+            `Exception`, if download of predictor fails.
+        """
         if not os.path.isfile(PREDICTOR_PATH):
-            print 'Predictor not found. Downloading...this may take a while...'
-            urllib.urlretrieve(
-                'https://github.com/hriddhidey/visage/blob/master/visage/shape_predictor_68_face_landmarks.dat?raw=true',
-                PREDICTOR_PATH
-            )
-            print 'Predictor downloaded.'
+            try:
+                print 'Predictor not found. Downloading...this may take a while...'
+                pbar = ProgressBar(widgets=[Percentage(), Bar()])
+                url = 'https://github.com/hriddhidey/visage/blob/master/visage/shape_predictor_68_face_landmarks.dat?raw=true'
+                urlretrieve(
+                    url,
+                    PREDICTOR_PATH,
+                    reporthook=dl_progress
+                )
+                def dl_progress(count, block_size, total_size):
+                    """ Show download progress bar. """
+                    pbar.update(int(count * block_size * 100 / total_size))
+                print 'Predictor downloaded.'
+            except Exception:
+                print 'Error downloading predictor. Try again with reliable network connection.'
+                raise Exception
         self.predictor = dlib.shape_predictor(PREDICTOR_PATH)
         self.cascade = cv2.CascadeClassifier(CASC_PATH)
         self.detector = dlib.get_frontal_face_detector()
@@ -46,7 +62,9 @@ class DetectLandmarks(object):
 
 
     def __get_landmarks(self, image):
-        """ Fetch the landmarks from a given image. """
+        """ Extract the landmarks from a given image. 
+        Returns `None` if no landmarks found.
+        """
         try:
             rects = self.detector(image, 1)
             size = len(rects)
