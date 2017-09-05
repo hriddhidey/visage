@@ -30,6 +30,7 @@ pip install virtualenv
 virtualenv my_project
 cd my_project && source bin/activate
 ```
+Now you can install your python modules and run your code in an isolated chamber. Once you're done, run `deactivate` to close the virtual environment.
 * Install the python module requirements by running - `pip install pyvisage`
 >_Note_: If you are not using `virtualenv`, you might need `sudo` to make this work.
 
