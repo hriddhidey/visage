@@ -65,3 +65,10 @@ Certain best practices to be followed to ensure optimal detection and applicatio
 <img width="300" alt="screen shot 2017-08-08 at 12 51 54 pm" src="https://user-images.githubusercontent.com/11678594/30049806-9e7d90bc-9239-11e7-9db0-57825c1c4928.png">
 
 * Focus & Movement: Image focus and blur can have similar effects on performance as low resolution. Thus, make sure your captured image is not blurry. If the camera is having difficulty focusing, you might be too close or too far from the device.
+
+<br />
+
+## Attributions
+I would like to thank [Davis E. King](https://github.com/davisking) who built [dlib](http://dlib.net/), for the documentation and sample codes provided, which were a great help in building this.
+
+<br />
