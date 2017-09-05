@@ -6,11 +6,11 @@ This module contains the DetectLandmark class.
 """
 
 import os.path
+import sys
 from urllib import urlretrieve
 import cv2
 import dlib
 import numpy
-from progressbar import ProgressBar, Percentage, Bar
 
 PREDICTOR_PATH = "shape_predictor_68_face_landmarks.dat"
 CASC_PATH = "haarcascade_frontalface_default.xml"
@@ -41,20 +41,21 @@ class DetectLandmarks(object):
         if not os.path.isfile(PREDICTOR_PATH):
             try:
                 print 'Predictor not found. Downloading...this may take a while...'
-                pbar = ProgressBar(widgets=[Percentage(), Bar()])
                 url = 'https://github.com/hriddhidey/visage/blob/master/visage/shape_predictor_68_face_landmarks.dat?raw=true'
+                def dl_progress(count, block_size, total_size):
+                    """ Show download progress bar. """
+                    percent = int(count*block_size*100/total_size)
+                    sys.stdout.write("\r" + 'Progress:' + "...%d%%" % percent)
+                    sys.stdout.flush()
                 urlretrieve(
                     url,
                     PREDICTOR_PATH,
                     reporthook=dl_progress
                 )
-                def dl_progress(count, block_size, total_size):
-                    """ Show download progress bar. """
-                    pbar.update(int(count * block_size * 100 / total_size))
                 print 'Predictor downloaded.'
-            except Exception:
-                print 'Error downloading predictor. Try again with reliable network connection.'
-                raise Exception
+            except IOError:
+                print 'Download failed. Try again with reliable network connection.'
+                raise IOError
         self.predictor = dlib.shape_predictor(PREDICTOR_PATH)
         self.cascade = cv2.CascadeClassifier(CASC_PATH)
         self.detector = dlib.get_frontal_face_detector()
