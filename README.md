@@ -24,18 +24,23 @@ Add virtual makeup to a picture of a face.
 
 * Install **Cmake, Boost, and Boost-Python** - `brew install cmake boost boost-python`
 
-* Kindly consider using a **virtual environment** for development. Check out [**this link**](http://docs.python-guide.org/en/latest/dev/virtualenvs/) to get an idea about how to do that. 
-
+* Kindly consider using a **virtual environment** for development. Check out [**this link**](http://docs.python-guide.org/en/latest/dev/virtualenvs/) for detailed explanations on how to do that. Follow these steps to get up and running quickly -
+```
+pip install virtualenv
+virtualenv my_project
+cd my_project && source bin/activate
+```
 * Install the python module requirements by running - `pip install pyvisage`
+>_Note_: If you are not using `virtualenv`, you might need `sudo` to make this work.
 
 ## Usage
 
-The module consists of two classes - `Detect Features` and `ApplyMakeup`. You can import both of them from `pyvisage`, and use access their functions to either selectively detect face only, or apply lipstick directly.
+The module is named `visage`, and consists of two classes - `Detect Features` and `ApplyMakeup`. You can import, and access their functions to either selectively detect face only, or apply lipstick directly. Kindly read the [Wiki](https://github.com/hriddhidey/visage/wiki) for detailed usage.
 
 Example - 
+>_Note_: You will need a working internet connection the first time you run this, as it will download a predictor file to your project folder the first time.
 ```
 from visage import ApplyMakeup
 AM = ApplyMakeup()
 output_file = AM.apply_lipstick('input.jpg',170,10,30) // (R,G,B) - (170,10,30)
 ```
-For detailed usage, refer to [Wiki](https://github.com/hriddhidey/visage/wiki).
