@@ -51,3 +51,17 @@ from visage import ApplyMakeup
 AM = ApplyMakeup()
 output_file = AM.apply_lipstick('input.jpg',170,10,30) // (R,G,B) - (170,10,30)
 ```
+This assumes you have a front-facing image of a human face saved in your current directory as `input.jpg`.
+
+<br />
+
+## Guidelines for Image
+
+Certain best practices to be followed to ensure optimal detection and application -
+* Positioning: Face the camera directly and position yourself so that your face fills the about 50-70% of the frame. Avoid extreme angles and poses.
+* Expressions: Preferably maintain a neutral expression. Smiles will be detected comfortably, as long as the shape of the mouth and lips aren't too contorted. Remove any dark glasses or tinted lenses, and keep both eyes open for proper application of eyeliner.
+* Lighting: For increased visibility, avoid bright backlighting ( such as the sun, or other bright light sources ), and glare, by taking your photographs under an even light. 
+* Orientation: Kindly ensure an upright orientation in portrait mode.
+<img width="300" alt="screen shot 2017-08-08 at 12 51 54 pm" src="https://user-images.githubusercontent.com/11678594/30049806-9e7d90bc-9239-11e7-9db0-57825c1c4928.png">
+
+* Focus & Movement: Image focus and blur can have similar effects on performance as low resolution. Thus, make sure your captured image is not blurry. If the camera is having difficulty focusing, you might be too close or too far from the device.
