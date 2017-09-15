@@ -42,7 +42,8 @@ Kindly figure out how to get the same for your distribution.
 ```
 sudo yum install cmake boost boost-devel 
 ```
->Note: You will need C++11 compiler for Cmake. CentOS does not come with the same out of the box. Follow [**this link's instructions**](https://hiltmon.com/blog/2015/08/09/c-plus-plus-11-on-centos-6-dot-6/) to get it.
+>*Note:* You will need C++11 compiler for Cmake. CentOS does not come with the same out of the box. Follow [**this link's instructions**](https://hiltmon.com/blog/2015/08/09/c-plus-plus-11-on-centos-6-dot-6/) to get it.
+>*Note:* Kindly raise issues if you face setup problems on your Linux distributions. I will ammend to instructions to resolve the same.
 
 3. See Step 4 - Generic.
 
