@@ -15,30 +15,53 @@ Add virtual makeup to a picture of a face.
 <br />
 
 
-## Installation _(MacOS)_
+## Installation 
 
-* You need **>=Python2.7** and `pip` to get this working. MacOS comes with Python2.7 installed by default. If you don't have `pip`, follow these steps to get it - 	
+### _MacOS_
+
+1. You need **>=Python2.7** and `pip` to get this working. MacOS comes with Python2.7 installed by default. If you don't have `pip`, follow these steps to get it - 	
 	* `curl -O https://bootstrap.pypa.io/get-pip.py`
 	* `sudo python get-pip.py`
 	* `pip install --upgrade pip`
 
-* If you don't have [Homebrew](https://brew.sh/), copy paste the following in your terminal to get it - 
+
+2. Install **Cmake, Boost, and Boost-Python** - `brew install cmake boost boost-python`
+> If you don't have [Homebrew](https://brew.sh/), copy paste the following in your terminal to get it - 
 `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
-* Install **Cmake, Boost, and Boost-Python** - `brew install cmake boost boost-python`
+3. See Step 4 - Generic.
 
-* Kindly consider using a **virtual environment** for development. Check out [**this link**](http://docs.python-guide.org/en/latest/dev/virtualenvs/) for detailed explanations on how to do that. Follow these steps to get up and running quickly -
+<br />
+
+### _Linux_
+
+1. You will need **>=Python2.7** and `pip` to get this working.
+Kindly figure out how to get the same for your distribution.
+
+2. You need Cmake, and Boost-Python. To get the same, use `yum` of `apt-get` as you please.
+```
+sudo yum install cmake boost boost-devel 
+```
+>Note: The above works on CentOS. Please raise an issue if it doesn't work on your distribution. I'll add detailed instructions for the same.
+
+3. See Step 4 - Generic.
+
+<br />
+
+### _Generic_
+
+4. Kindly consider using a **virtual environment** for development. Check out [**this link**](http://docs.python-guide.org/en/latest/dev/virtualenvs/) for detailed explanations on how to do that. Follow these steps to get up and running quickly -
 ```
 pip install virtualenv
 virtualenv my_project
 cd my_project && source bin/activate
 ```
 Now you can install your python modules and run your code in an isolated chamber. Once you're done, run `deactivate` to close the virtual environment.
-* Install the python module requirements by running - `pip install pyvisage`
+
+5. Install the python module requirements by running - `pip install pyvisage`
 >_Note_: If you are not using `virtualenv`, you might need `sudo` to make this work.
 
 <br />
-
 
 ## Usage
 
