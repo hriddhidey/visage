@@ -75,8 +75,8 @@ class ApplyMakeup(DetectLandmarks):
 
     def __fill_lip_lines(self, outer, inner):
         """ Fills the outlines of a lip with colour. """
-        outer_curve = itertools.izip(outer[0], outer[1])
-        inner_curve = itertools.izip(inner[0], inner[1])
+        outer_curve = zip(outer[0], outer[1])
+        inner_curve = zip(inner[0], inner[1])
         count = len(inner[0]) - 1
         last_inner = [inner[0][count], inner[1][count]]
         for o_point, i_point in itertools.izip_longest(
@@ -94,8 +94,8 @@ class ApplyMakeup(DetectLandmarks):
         """ Fills solid colour inside two outlines. """
         inner[0].reverse()
         inner[1].reverse()
-        outer_curve = itertools.izip(outer[0], outer[1])
-        inner_curve = itertools.izip(inner[0], inner[1])
+        outer_curve = zip(outer[0], outer[1])
+        inner_curve = zip(inner[0], inner[1])
         points = []
         for point in outer_curve:
             points.append(np.array(point, dtype=np.int32))
@@ -110,8 +110,8 @@ class ApplyMakeup(DetectLandmarks):
 
     def __smoothen_color(self, outer, inner):
         """ Smoothens and blends colour applied between a set of outlines. """
-        outer_curve = itertools.izip(outer[0], outer[1])
-        inner_curve = itertools.izip(inner[0], inner[1])
+        outer_curve = zip(outer[0], outer[1])
+        inner_curve = zip(inner[0], inner[1])
         x_points = []
         y_points = []
         for point in outer_curve:
@@ -183,7 +183,7 @@ class ApplyMakeup(DetectLandmarks):
                     eye_y.append(int(curve(point)) - 2)
                 elif count:
                     eye_y.append(int(curve(point)) - 3)
-        curve = itertools.izip(eye_x, eye_y)
+        curve = zip(eye_x, eye_y)
         points = []
         for point in curve:
             points.append(np.array(point, dtype=np.int32))
@@ -287,7 +287,7 @@ class ApplyMakeup(DetectLandmarks):
         self.blue_l = blips
         self.__read_image(filename)
         lips = self.get_lips(self.image)
-        lips = list(map(lambda point: point.split(), lips.split('\n')))
+        lips = list([point.split() for point in lips.split('\n')])
         lips_points = [item for sublist in lips for item in sublist]
         uol, uil, lol, lil = self.__get_points_lips(lips_points)
         uol_c, uil_c, lol_c, lil_c = self.__get_curves_lips(uol, uil, lol, lil)

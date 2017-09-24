@@ -6,3 +6,6 @@ share
 pyvisage.egg-info
 .Python
 pip-selfcheck.json
+*.pyc
+*.jpg
+*.jpeg
