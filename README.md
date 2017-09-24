@@ -38,7 +38,7 @@ Add virtual makeup to a picture of a face.
 1. You will need **>=Python2.7** and `pip` to get this working.
 Kindly figure out how to get the same for your distribution.
 
-2. You need Cmake, and Boost-Python. To get the same, use `yum` of `apt-get` as you please.
+2. You need Cmake, and Boost-Python. To get the same, use `yum` or `apt-get` as you please.
 ```
 sudo yum install cmake boost boost-devel 
 ```
