@@ -3,8 +3,8 @@ Add virtual makeup to a picture of a face.
 
 <table>
 <tr>
-<td> <img height='300' text='Before' alt="Plain human face." src="https://user-images.githubusercontent.com/11678594/30020825-ef9a1d74-9182-11e7-93f3-90a218de516b.png"> </td>
-<td> <img height='300' text='After' alt="Human face with makeup." src="https://user-images.githubusercontent.com/11678594/30020826-efe4d6ca-9182-11e7-9b59-0324abdf7219.png"> </td>
+<td> <img width='300' height='400' text='Before' alt="Plain human face." src="https://user-images.githubusercontent.com/11678594/30020825-ef9a1d74-9182-11e7-93f3-90a218de516b.png"> </td>
+<td> <img width='300' height='400' text='After' alt="Human face with makeup." src="https://user-images.githubusercontent.com/11678594/30020826-efe4d6ca-9182-11e7-9b59-0324abdf7219.png"> </td>
 </tr>
 <tr>
 <td>Image without makeup.</td>
