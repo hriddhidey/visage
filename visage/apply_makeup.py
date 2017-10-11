@@ -122,12 +122,12 @@ class ApplyMakeup(DetectLandmarks):
             y_points.append(point[1])
         img_base = np.zeros((self.height, self.width))
         cv2.fillConvexPoly(img_base, np.array(np.c_[x_points, y_points], dtype='int32'), 1)
-        img_mask = cv2.GaussianBlur(img_base, (51, 51), 0)
+        img_mask = cv2.GaussianBlur(img_base, (81, 81), 0) #51,51
         img_blur_3d = np.ndarray([self.height, self.width, 3], dtype='float')
         img_blur_3d[:, :, 0] = img_mask
         img_blur_3d[:, :, 1] = img_mask
         img_blur_3d[:, :, 2] = img_mask
-        self.im_copy = (img_blur_3d * self.image + (1 - img_blur_3d) * self.im_copy).astype('uint8')
+        self.im_copy = (img_blur_3d * self.image * 0.7 + (1 - img_blur_3d * 0.7) * self.im_copy).astype('uint8')
 
 
     def __draw_liner(self, eye, kind):
@@ -249,13 +249,11 @@ class ApplyMakeup(DetectLandmarks):
         """ Fill colour in lips. """
         self.__fill_lip_lines(uol_c, uil_c)
         self.__fill_lip_lines(lol_c, lil_c)
-        self.__add_color(0.5)
+        self.__add_color(1)
         self.__fill_lip_solid(uol_c, uil_c)
         self.__fill_lip_solid(lol_c, lil_c)
         self.__smoothen_color(uol_c, uil_c)
         self.__smoothen_color(lol_c, lil_c)
-
-        self.__add_color(0.3)
 
 
     def __create_eye_liner(self, eyes_points):
