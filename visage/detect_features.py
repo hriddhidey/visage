@@ -7,7 +7,7 @@ This module contains the DetectLandmark class.
 
 import os.path
 import sys
-from urllib import urlretrieve
+from urllib.request import urlretrieve
 import cv2
 import dlib
 import numpy
@@ -40,7 +40,7 @@ class DetectLandmarks(object):
         """
         if not os.path.isfile(PREDICTOR_PATH):
             try:
-                print 'Predictor not found. Downloading...this may take a while...'
+                print ('Predictor not found. Downloading...this may take a while...')
                 url = 'https://github.com/hriddhidey/visage/blob/master/visage/shape_predictor_68_face_landmarks.dat?raw=true'
                 def dl_progress(count, block_size, total_size):
                     """ Show download progress bar. """
@@ -52,9 +52,9 @@ class DetectLandmarks(object):
                     PREDICTOR_PATH,
                     reporthook=dl_progress
                 )
-                print 'Predictor downloaded.'
+                print ('Predictor downloaded.')
             except IOError:
-                print 'Download failed. Try again with reliable network connection.'
+                print ('Download failed. Try again with reliable network connection.')
                 raise IOError
         self.predictor = dlib.shape_predictor(PREDICTOR_PATH)
         self.cascade = cv2.CascadeClassifier(CASC_PATH)
